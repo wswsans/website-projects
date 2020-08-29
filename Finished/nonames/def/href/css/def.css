@@ -1,0 +1,15 @@
+#back_to_home{
+	background: #55FF3E;
+	font-size: 20px; 
+	color: #FFFFFF;
+	margin: auto 5px;
+	padding: 10px 15px;
+	border-radius: 5px; 
+	text-decoration: none;
+	transition: 1s;
+}
+#back_to_home:hover{
+	background: #98FF8A; 
+	text-decoration: none; 
+	color: #34BDFF;
+}

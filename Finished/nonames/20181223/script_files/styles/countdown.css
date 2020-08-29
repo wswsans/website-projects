@@ -1,0 +1,30 @@
+html{
+	text-align: center;
+}
+input{
+	outline: none;
+	border: none; border-bottom: solid 1px #0085FF;
+	-webkit-appearance: none; -moz-appearance: none; appearance: none;
+}
+
+.add{}
+.del{}
+
+.btn{
+	border: solid 1px #0085FF;
+	padding: 5px 10px; margin: 4px 5px;
+	border-radius: 5px;
+}
+
+.ct_dl{
+	/*background-color: #CCFFFF;*/
+	border: solid 1px #0085FF;
+	padding: 5px 10px; margin: 4px 5px;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: left;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance:textfield; }

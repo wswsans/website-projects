@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	blink_func_color="fff";
+	var blink_func = function(){
+		blink_func_run=setTimeout("blink_func()", 500);
+		if (blink_func_color=="fff"){ blink_func_color="000"; }else{ blink_func_color="fff"; }
+		document.getElementsByClassName("blink")[0].style.color="#"+blink_func_color;
+		document.getElementsByTagName("blink")[0].style.color="#"+blink_func_color;
+	};
+	
+	blink_func();
+	//document.getElementsByTagName("blink")[0].style.color="#"+"";
+</script>
+<span class="blink">遊びで作った</span>
+<blink>Blink の代わり</blink>

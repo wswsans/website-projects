@@ -1,0 +1,41 @@
+<em class='blink'>僕が作った Blink</em>
+<em>Googleの Blink</em>
+<blink>消えた Blink</blink>
+
+<style type="text/css">
+  @keyframes blink {80%{opacity:0.0}}em{animation:blink 1s steps(1,end) 0s infinite}
+</style>
+
+<script type='text/javascript'>
+let NowBlinkColor, // 01に変わる変数。 (0: Background, 1: DefFont)
+  BlinkFuncRun, // setTimeoutに使う変数
+  BlinkFunc, // 関数変数
+  fontColor, // Class('blink') の文字色取得の時に使う
+  backgroundColor, // Tag('body') の背景色
+  DefFontColor // これ設定しないと、バグり出す
+
+try { fontColor = document.getElementsByClassName('blink')[0].style.color } catch (e) { window.stop() } // Class('blink') がなければ中止
+
+BlinkFunc = function () {
+  BlinkFuncRun = setTimeout('BlinkFunc()', 500)
+  backgroundColor = document.getElementsByTagName('body')[0].style.backgroundColor
+  if (!backgroundColor) { backgroundColor = 'rgb(255, 255, 255)' } // Tag('body') になにもなければデフォルトだと思うので 'fff'
+
+  try {
+    if (fontColor) { DefFontColor = fontColor } else { DefFontColor = 'rgb(0, 0, 0)' } // fontColorにあれば代入, なければデフォルトだと思うので '#000000'
+  } catch (e) {
+    console.log('Class(\'Blink\') がないため中止')
+  }
+
+  if (NowBlinkColor === 0) {
+    NowBlinkColor = 1
+    document.getElementsByClassName('blink')[0].style.color = backgroundColor
+  } else {
+    NowBlinkColor = 0
+    document.getElementsByClassName('blink')[0].style.color = DefFontColor
+  }
+}
+window.onload = function () {
+  BlinkFunc() // 始め!
+}
+</script>

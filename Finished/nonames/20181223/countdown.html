@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>カウントダウン</title>
+    <script type="text/javascript" src="script_files/scripts/countdownV2.js"></script>
+    <link rel="stylesheet" type="text/css" href="script_files/styles/countdown.css">
+  </head>
+  <body>
+    <!-- <select class="ct_list" onchange="ct_func()">
+      <option value="NoSet" disabled selected>- 選択してください -</option>
+      <option value="テスト.2018.12.21.20.30.0">テスト</option>
+    </select> -->
+    <div class="setting_ct">
+      <input type="number" class="time year" placeholder="年">
+      <input type="number" class="time month" placeholder="月">
+      <input type="number" class="time day" placeholder="日">
+      <input type="number" class="time hour" placeholder="時間">
+      <input type="number" class="time minute" placeholder="分">
+      <input type="number" class="time second" placeholder="秒">
+      <input type="text" class="name" placeholder="名前" value="NoName">
+      <span class="add btn" onclick="setCookie()">追加</span>
+    </div>
+    <div class="ct_list">
+      <!-- dl class="ct_dl" name="testing...">
+        <dt class="ct_name">Name: NoName</dt>
+        <dd class="ct_time">Time: NoData</dd>
+        <dd class="ct_ream">Reamaining Time: NoData</dd>
+        <span class="del btn" onclick="del('testing...')">Delete</span>
+        <span class="edit btn" onclick="edit('testing...')">Edit</span>
+      </dl>  -->
+    </div>
+  </body>
+</html>

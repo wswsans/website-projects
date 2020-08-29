@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../def/href/css/def.css">
+		<script type="text/javascript" src="href/scripts/time.js"></script>
+		<link rel="stylesheet" type="text/css" href="href/css/hide.css">
+		<link rel="stylesheet" type="text/css" href="href/css/time.css">
+		<link rel="stylesheet" type="text/css" href="href/scripts/bootstrap.css">
+		<link rel="icon" href="href/image/time.jpeg">
+		<title>Time</title>
+	</head>
+	<body>
+		<div class="hidden_box">
+			<label for="label1">クリックして アナログ/デジタル を変更</label>
+			<input type="checkbox" id="label1">
+			<div class="not_hidden_show">
+				<table border="1" class="table table-striped">
+					<tr>
+						<th>現地時間</th>
+						<th>協定世界時</th>
+					</tr>
+					<tr>
+						<td class="time_analog">
+							<img src="href/image/time_html.jpg" class="time_img">
+							<div class="time hour" id="n_h">|</div>
+							<div class="time minute" id="n_m">|</div>
+							<div class="time second" id="n_s">|</div>
+						</td>
+						<td class="time_analog">
+							<img src="href/image/time_html.jpg" class="time_img">
+							<div class="time hour" id="u_h">|</div>
+							<div class="time minute" id="u_m">|</div>
+							<div class="time second" id="u_s">|</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="hidden_show">
+				<table border="1" class="table table-striped">
+					<tr>
+						<!-- <th>Local time / Coordinated Universal Time</th> -->
+						<th>現地時間</th> 
+						<th>協定世界時</th>
+					</tr>
+					<tr>
+						<td><span id="obj"> Year Month/Day Week Hour:Minute:Second </span></td>
+						<td><span id="utc_obj"> Year Month/Day Week Hour:Minute:Second </span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<a id="back_to_home" href="../menu.html">To Menu</a>
+	</body>
+</html>

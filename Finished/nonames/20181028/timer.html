@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="href/scripts/timer.js"></script>
+		<link rel="stylesheet" type="text/css" href="../def/href/css/def.css">
+		<link rel="stylesheet" type="text/css" href="href/css/hide.css">
+		<link rel="stylesheet" type="text/css" href="href/css/timer.css">
+		<link rel="stylesheet" type="text/css" href="href/css/time.css">
+		<link rel="stylesheet" type="text/css" href="href/css/bootstrap.css">
+		<link rel="icon" href="href/image/time.jpeg">
+		<title>Timer</title>
+	</head>
+	<body>
+		<div class="hidden_box">
+			<input type="checkbox" id="label1">
+			<label for="label1">クリックして アナログ/デジタル を変更</label>
+			<div class="not_hidden_show">
+				<div class="timer_set center">
+					<form action="#" class="timer_form" id="timer_set">
+						Hour: <input type="number" name="hour" class="set timer_checks" value="0" placeholder="0~60">
+						Minute: <input type="number" name="minute" class="set timer_checks" value="1" placeholder="0~60">
+						Second: <input type="number" name="second" class="set timer_checks" value="0" placeholder="0~60">
+					</form>
+					<label onclick="start_timer();">スタート</label>
+				</div>
+			</div>
+			<div class="hidden_show">
+				<h2 class="alert">ここで変更はできません!</h2>
+				<div class="timer_analog">
+					<img src="href/image/time_html.jpg" class="time_img">
+					<div class="time hour timer_analog" id="n_h">|</div>
+					<div class="time minute timer_analog" id="n_m">|</div>
+					<div class="time second timer_analog" id="n_s">|</div>
+				</div>
+			</div>
+		</div>
+		<a id="back_to_home" href="../menu.html">To Menu</a>
+	</body>
+</html>

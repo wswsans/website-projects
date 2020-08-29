@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>検索中...</title>
+		<link rel="stylesheet" type="text/css" href='hide.css'>
+		<link rel='stylesheet' type='text/css' href='index.css'>
+		<script src='../jquery.min.js'></script>
+		<script type='text/javascript' src='index.js'></script>
+		<meta charset='utf-8'>
+	</head>
+	<body>
+		<div class="hidden_box">
+			<!-- <label for="label1"></label> -->
+			<input type="checkbox" id="label1">
+			<div class="not_hidden_show" style="text-align: center;">
+				<!-- <meter id="search" value="0" max="100"></meter> -->
+				<span>あなたの端末のディレクトリを検索中...</span><br>
+				<progress value="0" max="100" id="search"></progress>
+			</div>
+			<div class="hidden_show">
+				<span id='test'></span>
+				<h1 id='HEAD'>あなたの端末からN個のウイルスが発見されました</h1>
+				<span>今すぐ除去してください。</span>
+				<table border='1' id="table">
+					<tr>
+						<th>OS</th>
+						<td id='OS'>OperatingSystemName</td>
+					</tr>
+					<tr>
+						<th>Type Number</th>
+						<td id="TN">Type Number</td>
+					</tr>
+					<tr>
+						<th>Browser</th>
+						<td id='Browser'></td>
+					</tr>
+					<tr>
+						<th>Agent</th>
+						<td id='UserAgent'>Agent</td>
+					</tr>
+					<tr>
+						<th>VirusName</th>
+						<td id='VirusName'>VirsName, VirusName2...</td>
+					</tr>
+					<tr>
+						<th>Remaining Time</th>
+						<td id="Timer">N秒</td>
+					</tr>
+				</table>
+				<br>
+				<span onclick="location.href='../?go=de'" id="DELETE">無料ウイルス削除</span>
+			</div>
+		</div>
+	</body>
+</html>

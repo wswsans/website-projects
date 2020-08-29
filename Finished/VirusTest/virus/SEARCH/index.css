@@ -1,0 +1,58 @@
+/*meter {
+	width: 500px;
+	height: 10px;
+	/* -webkit-appearance: none; /* Reset appearance * /
+	border: 0px solid #0009B0;
+	border-radius: 5px;
+}
+meter::-webkit-meter-bar {
+	background: none; /* Required to get rid of the default background property * /
+	background-color: whiteSmoke;
+	box-shadow: 0 5px 5px -5px #333 inset;
+}
+meter::-webkit-meter-optimum-value {
+	box-shadow: 0 5px 5px -5px #999 inset;
+	background-image: linear-gradient(#0000FF 5%,  #0000FF 5%, #0000FF 15%, #0000FF 15%, #0000FF 55%, #0000FF 55%, #0000FF 95%, #0000FF 95%, #0000FF 100%);
+	background-size: 100% 100%;
+}*/
+html,body{
+    overflow: hidden;
+}
+
+th{
+	text-align: center;
+}
+td{
+	padding: 2px;
+}
+#table{
+	border-collapse: collapse;
+}
+
+#search{
+	position: relative;
+}
+.not_hidden_show{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	-webkit- transform: translateY(-50%) translateX(-50%);
+}
+.hidden_show{
+	text-align: left;
+}
+
+#DELETE{
+	padding: 10px 20px;
+	margin: 10px;
+	border: 1px #22FF19 solid;
+	background-color: #1DDE17;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
+
+/*progress{
+	width: 50%;
+	height: 25%;
+}*/
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Countdown v3</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</head>
+	<body>
+		<div id="Setting">
+			<div id="TimeSet">
+				<input type="number" id="Year" placeholder="年">
+				<input type="number" id="Month" placeholder="月">
+				<input type="number" id="Date" placeholder="日">
+				<input type="number" id="Hour" placeholder="時">
+				<input type="number" id="Minute" placeholder="分">
+				<input type="number" id="Second" placeholder="秒">
+			</div>
+			<input type="text" id="name" placeholder="登録名" value="NoName">
+			<input type="submit" onclick="setTime()" value="送信">
+		</div>
+		<div id="ctd">
+			<!-- 
+			<div id="` + Kernel[0].slice(2) + `">
+				<span id="name">Name</span><br>
+				<hr>
+				<span id="settedTime">SettedTime: YYYY MM/DD HH:MM:SS</span><br>
+		    	<span id="remaining">Remaining: YYYY MM/DD HH:MM:SS</span><br>
+		    	<span id="edit" onclick="Edit(this)">Edit</span>
+		    	<span id="del" onclick="Del(this)">Delete</span>
+		    </div>
+			-->
+		</div>
+	</body>
+</html>

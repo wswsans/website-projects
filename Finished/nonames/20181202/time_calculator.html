@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Time Calculator</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="href/scripts/time_calculator.js"></script>
+		<link rel="stylesheet" type="text/css" href="href/styles/time_calculator.css">
+	</head>
+	<body>
+		<div class="menu">
+			<div class="left_div">
+				<input type="text" value="1" placeholder="Hour" class="time_input left hou"> :
+				<input type="text" value="1" placeholder="Minute" class="time_input left min"> 
+				<input type="text" value="0" placeholder="Second" class="time_input left sec">
+			</div>
+			<select id="calc">
+				<option value="minus">-</option>
+				<option value="plus">+</option>
+			</select>
+			<div class="right_dev">
+				<input type="text" value="0" placeholder="Hour" class="time_input right hou"> :
+				<input type="text" value="1" placeholder="Minute" class="time_input right min"> 
+				<input type="text" value="0" placeholder="Second" class="time_input right sec">
+			</div>
+
+			<br><span class="start" onclick="Calculator();">=</span> <span class="time_input" id="answer">Answer: 0:0 00</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+.btn_style{
+	border: dotted 2px #AFDDDC;
+	border-radius: 10px;
+	background-color: #CAF6F6;
+	font-size: 15px;
+	margin: 10px 5px; padding: 5px;
+}
+.time{
+	border: dotted 2px #6DF68D;
+	border-radius: 5px;
+	font-size: 20px;
+}
+.lap{
+	border: dotted 2px #B7F6A6;
+}
+.td{
+}

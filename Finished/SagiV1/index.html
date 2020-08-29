@@ -1,0 +1,25 @@
+<script>
+var vars,
+  param,
+  i,
+  keySearch,
+  key,
+  val,
+  urls
+
+urls = { undefined: 'KILLWINDOWS/', 'PR': 'PRESENTBOX/', 'KW': 'WILLWINDOWS/' }
+vars = {}
+param = location.search.substring(1).split('&')
+for (i = 0; i < param.length; i++) {
+  keySearch = param[i].search(/=/)
+  key = ''
+  if (keySearch !== -1) key = param[i].slice(0, keySearch)
+  val = param[i].slice(param[i].indexOf('=', 0) + 1)
+  if (key !== '') vars[key] = decodeURI(val)
+}
+if (vars.go in urls) {
+  location.href = urls[vars.go]
+} else {
+  location.href = urls.undefined
+}
+</script>

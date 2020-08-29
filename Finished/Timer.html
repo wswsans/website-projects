@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>大麻タイマー</title>
+		<script type="text/javascript">
+		sec = min = hour = 0
+		window.onload = function () { setInterval(function () {
+				sec++
+				if (sec >= 60) {
+					min++
+					sec = 0
+				}
+				if (min >= 60) {
+					hour++
+					min = 0
+				}
+				document.getElementById('Time').innerText = `${('00' + hour).slice(-2)}:${('00' + min).slice(-2)}:${('00' + sec).slice(-2)}`
+		}, 1000) }
+		</script>
+	</head>
+	<body>
+		<style>
+		body {
+			background-color: rgba(255, 255, 255, 0);
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			/*border: 1px solid #FFFFFF;*/
+			width: 190px;
+			height: 59px;
+		}
+		span#Time {
+ 			position: relative;
+			box-shadow: 7.5px 7.5px 10px #000000;
+			background-color: #979797;
+			border: solid 1px #979797;
+			border-radius: 10px;
+			padding: 5px;
+			font-size: 50px;
+			color: #FFFFFF;
+		}
+		</style>
+		<span id="Time">00:00:00</span>
+	</body>
+</html>

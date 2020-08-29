@@ -1,0 +1,53 @@
+input:focus{
+	outline: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance:textfield;
+}
+
+input{
+	border: none;
+	border-bottom: 1px #0000FE solid;
+}
+
+input[type="submit"]{
+	border: 1px #7B83FF solid;
+	background-color: #7B83FF;
+	border-radius: 5px;
+}
+
+div#ctd > *{
+	display: inline-block;
+	text-align: left;
+	border: 1px #2596FF solid;
+	border-radius: 5px;
+	margin: 5px;
+	padding: 2px;
+}
+
+#edit{
+	border-radius: 5px;
+	text-align: center;
+	margin: 1px;
+	padding: 1px 2px;
+	border: 2px #0F0 solid;
+}
+
+#del{
+	border-radius: 5px;
+	text-align: center;
+	margin: 1px;
+	padding: 1px 2px;
+	border: 2px #F00 solid;
+}
+
+div#ctd > * > hr{
+	margin: 0px;
+	border-color: #2596FF;
+}

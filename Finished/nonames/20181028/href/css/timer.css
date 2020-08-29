@@ -1,0 +1,67 @@
+.set{
+	width: 150px; height: 50px;
+	font-size: 25px;
+	background-color: #1C1C1C; border-color: #5C5C5C;
+	border-radius: 10px;
+	color: #BEBEBE;
+	margin: 2.5px;
+	text-align: center;
+}
+
+.timer{
+	width: 250px; height: 50px;
+	font-size: 25px;
+	background-color: #1C1C1C; border-color: #5C5C5C;
+	border-radius: 10px;
+	color: #BEBEBE;
+	margin: 2.5px;
+	text-align: center;
+
+}
+
+.timer_set{
+	background-color: #474747;
+	color: #FFF;
+	border: solid 4px #6D6D6D;
+	width: 700px;
+	height: 120px;
+	text-align: center;
+}
+
+#time_start {
+	padding: 10px;
+	font-weight: bold;
+	border: solid 2px black;
+	cursor :pointer;
+	transition: 0.5s;
+	margin: 2px;
+}
+
+.alert{
+	color: #FF0004;
+	background-color: #7F0002;
+}
+
+.timer_form{
+	font-size: 20px;
+}
+
+.center{
+	position: absolute; margin: auto;
+	top: 0; right: 0; bottom: 0; left: 0;
+}
+
+input:focus{ outline: none; }
+
+.hidden_box label{
+	background-color: #FFF;
+	color: #000;
+	border-radius: 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] { -moz-appearance:textfield; }

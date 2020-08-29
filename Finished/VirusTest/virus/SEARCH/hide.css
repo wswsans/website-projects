@@ -1,0 +1,51 @@
+.hidden_box {
+	margin: 1px 0;/*前後の余白*/
+	padding: 0;
+}
+
+/*ボタン装飾*/
+/*.hidden_box label {
+	padding: 10px;
+	font-weight: bold;
+	border: solid 2px black;
+	cursor :pointer;
+	transition: 0.5s;
+	margin: 2px;
+	border-radius: 10px;
+}
+*/
+/*ボタンホバー時*/
+/*.hidden_box label:hover { background: #efefef; }*/
+/*チェックは見えなくする*/
+#label1 { display: none; }
+
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show {
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: 0.8s;
+}
+/*クリックで中身表示*/
+.hidden_box input:checked ~ .hidden_show {
+	padding: 10px 0;
+	height: auto;
+	opacity: 1;
+}
+
+
+.hidden_box .not_hidden_show {
+	padding: 10px 0;
+	height: auto;
+	opacity: 1;
+}
+
+.hidden_box input:checked ~ .not_hidden_show {
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: 0.8s;
+}

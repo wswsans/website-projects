@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>-</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="language.js"></script>
+		<script type="text/javascript">
+function SetUp() {
+	$('title')[0].firstChild.nodeValue = lang[1]
+	$('span#question')[0].firstChild.nodeValue = lang[2]
+	$('span#Start')[0].firstChild.nodeValue = lang[3]
+	$('span#cheecking')[0].firstChild.nodeValue = lang[4]
+	$('span#TrueStart')[0].firstChild.nodeValue = lang[5]
+	$('span#alert')[0].firstChild.nodeValue = lang[6]
+	$('option#None')[0].firstChild.nodeValue = lang[7]
+	$('option#en')[0].firstChild.nodeValue = lang[8]
+	$('option#ja')[0].firstChild.nodeValue = lang[9]
+}
+		</script>
+	</head>
+	<body style="background: #0025F8;" onload="SetUp()">
+		<!--
+		Hmm...
+		You are boring person.
+		-->
+		<div style="text-align: center;">
+			<span style="font-size: 25px;" id="question">-</span><br>
+			<span style="font-size: 25px;" id=Start onclick="window.location.href='./'">-</span><br>
+			<span style='font-size: 10px;' id="cheecking">-<span style='font-size: 10px;' id=TrueStart onclick="window.location.href='click.html?lang=click.' + location.href.slice(-2)">-</span> ^^</span><br>
+			<span style="font-size: 25px;" id="alert">-</span>
+		</div>
+		<select id="lang" onchange="Change('index.' + this.value); SetUp(); location.href = './?lang=index.' + this.value">
+			<option id="None" value="None" disabled selected>Language</option>
+			<option id="en" value="en">English</option>
+			<option id="ja" value="ja">Japanese</option>
+		</select>
+	</body>
+</html>
