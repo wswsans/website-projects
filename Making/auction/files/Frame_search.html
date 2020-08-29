@@ -1,0 +1,53 @@
+<input type="hidden" id="title" value="検索">
+<style type="text/css">
+div#result {
+	margin: 0 auto;
+}
+span#Error {
+	color: #DB0437;
+	font-size: 15px;
+}
+</style>
+<script type="text/javascript">
+var tmp, ct
+ct = 0
+$('button#send_btn')[0].onclick = function () {
+	tmp = {sname: $('select#sname')[0].value, type: $('select#type')[0].value, text: $('input#text')[0].value}
+	if (( (tmp.sname + tmp.type).indexOf('Error') != -1 ) || ( tmp.text == '' )) {
+		$('span#Error')[0].innerText = '入力されていないところがあります．'
+	} else {
+		$('span#Error')[0].innerText = ''
+		$.ajax(url + '?mode=search&values=' + tmp.text + '&name=' + tmp.sname + '&type=' + tmp.type, 'post')
+		.done(function( data ) {
+			data = data.return
+			// $('div#result')[0].innerHTML = ''
+			for (Name in data) {
+				$('div#result')[0].innerHTML += '<span class="SearchVal">---------- ' + Name + ' ----------</span><ul class="value" id="' + Name + '"></ul>'
+				if (data[Name].length == 0) { $('ul.value')[ct].innerHTML += '<li class="NotFound"><span>見つかりませんでした</span></li>' }
+				for (Num in data[Name]) {
+					$('ul.value')[ct].innerHTML += '<li class="data"><span class="id">ID: </span> <span class="name">Name: </span></li>'
+					$('ul.value')[ct].children[Num].children[0].innerText += data[Name][Num][0]
+					$('ul.value')[ct].children[Num].children[1].innerText += data[Name][Num][1]
+				}
+				ct++
+			}
+		})
+	}
+}
+</script>
+<div id="search">
+	<select id="sname">
+		<option disabled selected value="Error">何を検索するか</option>
+		<option value="people">ユーザ</option>
+		<option value="selling">商品</option>
+	</select>
+	<select id="type">
+		<option disabled selected value="Error">検索方法</option>
+		<option value="id">ID</option>
+		<option value="name">名前</option>
+	</select>
+	<input type="text" id="text">
+	<button id="send_btn">送信</button>
+	<br><span id="Error"></span>
+</div>
+<div id="result"></div>

@@ -1,0 +1,35 @@
+<input type="hidden" id="title" value="購入">
+<style type="text/css"></style>
+<script type="text/javascript">
+var tmp, Num
+$.ajax(url + '?mode=list&names=products.selling', 'post')
+.done(function (data) {
+	data = data.return
+	data.obj = {}
+	for (Num in data.products) {
+		tmp = data.products[Num]
+		data.obj[tmp[0]] = tmp
+	}
+	tmp = data.selling[gets.parameter.pid]
+	$('li#name')[0].innerText += (tmp[1] === '') ? data.obj[tmp[0]][0] : tmp[1]
+	$('li#image img')[0].src = window.location.pathname + 'things/' + data.obj[tmp[0]][3] + '.gif'
+	$('li#description')[0].innerText += tmp[2]
+	$('li#money')[0].innerText += data.obj[tmp[0]][2]
+})
+
+$('button#yes')[0].onclick = function () {
+	console.log('Yes')
+}
+$('button#no')[0].onclick = function () {
+	console.log('No')
+}
+</script>
+<div id="check">
+	<ul id="data">
+		<li id="name">名前: </li>
+		<li id="image"><img></li>
+		<li id="description">説明: </li>
+		<li id="money">原価: </li>
+	</ul>
+	<span>購入しますか?</span><br><button id="yes">YES</button> <button id="no">NO</button>
+</div>

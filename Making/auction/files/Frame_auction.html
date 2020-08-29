@@ -1,0 +1,29 @@
+<input type="hidden" id="title" value="オークション">
+<script type="text/javascript">
+// window.location.search = 'link=buy&pid=' + gets.parameter.pid
+var data, tmp
+$.ajax(url + '?mode=list&names=products.selling', 'post')
+.done(function (data) {
+	data = data.return
+	data.obj = {}
+	for (Num in data.products) {
+		tmp = data.products[Num]
+		data.obj[tmp[0]] = tmp
+	}
+	tmp = data.selling[gets.parameter.pid]
+	$('img#image')[0].src = window.location.pathname + 'things/' + data.obj[tmp[0]][3] + '.gif'
+	$('span#name')[0].innerText += (tmp[1] === '') ? data.obj[tmp[0]][0] : tmp[1]
+	$('span#description')[0].innerText += tmp[2]
+})
+</script>
+
+<div id="auction">
+		 <span id="now">100$</span>
+		 <span id="get">100000000000$</span>
+		 <span id="remainTime">10s</span>
+</div>
+<div id="product">
+		 <img id="image">
+		 <span id="name">名前: </span><br>
+		 <span id="description">説明: </span>
+</div>

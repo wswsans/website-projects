@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>size</title>
+	</head>
+	<body>
+		<img src="https://web-designer.cman.jp/javascript_ref/window/size/size.gif" height="45%" width="45%">
+		<br><span id="sizes"></span>
+	</body>
+</html>
+<script type="text/javascript">
+func = function () {
+	document.getElementById('sizes').innerText = ''
+	ls = [['Height', 'Width'], ['screen.', 'screen.avail', 'window.inner', 'window.outer', 'document.body.client', 'document.documentElement.scroll']]
+	for (LW in ls[0]) {
+		for (fun in ls[1]) {
+			if (ls[1][fun].slice(-1) == '.') {
+				ls[0][LW] = ls[0][LW].toLowerCase();
+			}
+			document.getElementById('sizes').innerText += `${ls[1][fun]}${ls[0][LW]}: ${eval(`${ls[1][fun]}${ls[0][LW]}`)}\n`
+			ls[0] = ['Height', 'Width']
+		}
+		document.getElementById('sizes').innerText += '\n'
+	}
+	setTimeout(func, 50)
+}
+window.onload = function () {
+	func()
+}
+</script>

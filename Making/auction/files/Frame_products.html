@@ -1,0 +1,62 @@
+<input type="hidden" id="title" value="リスト">
+<style type="text/css">
+ul#products{
+	/*display: inline-block;*/
+	text-align: left;
+	padding: 0px;
+}
+
+ul#products li.list {
+	border: dashed 1px #000000;
+	padding: 5px;
+}
+
+ul#products img.image {
+	height: 5%;
+	width: 5%;
+}
+
+ul#products span.product {
+	color: #7892DE;
+	padding: 1px 20px;
+}
+
+ul#products a.url {
+	padding: 0px;
+}
+</style>
+<script type="text/javascript">
+var data, tmp,
+	end
+
+products = data = 0
+function dataCheck (variable) {
+	if (typeof(variable) != 'object') {
+		window.location.reload(1)
+	}
+}
+
+$.ajax(url + '?mode=list&names=products.selling', 'post')
+.done(function( data ) {
+	data = data.return
+	dataCheck(data)
+	data.products.obj = {}
+	for (num in data.products) {
+		tmp = data.products[num]
+		if (tmp != data.products.obj) {
+			data.products.obj[tmp[0]] = tmp.slice(1)
+		}
+	}
+	for (num in data.selling) {
+		tmp = data.selling[num][0]
+		$('ul#products')[0].innerHTML += '<a class="url" href="?link=auction&pid=-1"><li class="list"><img class="image" src="things/None.gif"> <span class="product">商品名</span><br><span class="description">商品説明</span> <span class="cost">~円から</span></li></a>'
+		$('img.image')[num].src = window.location.pathname + 'things/' + data.products.obj[tmp][2] + '.gif'
+		$('span.product')[num].innerText = (data.selling[num][1] == '') ? data.products.obj[tmp][0] : data.selling[num][1]
+		$('a.url')[num].href = '?link=auction&pid=' + num
+		$('span.description')[num].innerText = data.selling[num][2]
+		$('span.cost')[num].innerText = data.products.obj[tmp][1] + '¥ から'
+	}
+	console.log('Frame:', (Number(new Date()) - start), "ms")
+})
+</script>
+<ul id="products"></ul>
